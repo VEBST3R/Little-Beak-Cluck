@@ -1,0 +1,21 @@
+<linker>
+    <!-- Preserve data transfer objects used by JsonUtility and reflection -->
+    <assembly fullname="Assembly-CSharp">
+        <type fullname="LittleBeakCluck.World.CampaignWaveCacheFile" preserve="all" />
+        <type fullname="LittleBeakCluck.World.CampaignWaveCacheRecord" preserve="all" />
+        <type fullname="LittleBeakCluck.World.CampaignWaveCacheEntry" preserve="all" />
+        <type fullname="LittleBeakCluck.World.CampaignWaveAsset" preserve="all" />
+        <type fullname="LittleBeakCluck.World.WaveDefinitionData" preserve="all" />
+        <type fullname="LittleBeakCluck.World.WaveEntryData" preserve="all" />
+        <type fullname="LittleBeakCluck.World.EndlessSpawnEntryData" preserve="all" />
+    </assembly>
+
+    <!-- Ensure the Input System UI module isn't stripped on iOS builds -->
+    <assembly fullname="Unity.InputSystem">
+        <type fullname="UnityEngine.InputSystem.UI.InputSystemUIInputModule" preserve="all" />
+    </assembly>
+    <!-- Some package versions place UI module in a separate assembly -->
+    <assembly fullname="Unity.InputSystem.UI">
+        <type fullname="UnityEngine.InputSystem.UI.InputSystemUIInputModule" preserve="all" />
+    </assembly>
+</linker>
