@@ -2,81 +2,44 @@
 
 A 2D action game where you play as a brave little chicken defending against waves of enemies using the power of your voice!
 
-## About
+## Gameplay
 
-Little Beak Cluck is a wave-based combat game built in Unity. You control a chicken who can unleash devastating vocal attacks by charging up and letting out powerful screams. The longer you charge, the more waves you release - but timing is everything!
+You're a chicken with a special ability - your scream can defeat enemies. Hold down the attack button to charge up your voice, then release to unleash devastating sound waves. The longer you charge, the more powerful your attack becomes!
 
-## Core Mechanics
+## Mechanics
 
-### Voice Wave Combat
-- **Charge System**: Hold to charge your attack (min 0.5s, max 3s)
-- **Multi-Wave Attacks**: 
-  - Short charge = 1 wave
-  - Medium charge = 2 waves  
-  - Full charge = 3 waves
-- **Wave Types**: Switch between High, Mid, and Low frequency attacks (each with different properties)
+### Voice Attack System
+- **Charging**: Hold to build up power (0.5s minimum, 3s maximum)
+- **Wave Count**: 
+  - Quick tap = single wave
+  - Medium charge = double wave
+  - Full charge = triple wave attack
+- **Frequency Types**: Switch between High, Mid, and Low frequency waves, each dealing with enemies differently
 
 ### Game Modes
-- **Campaign Mode**: Progress through designed waves with increasing difficulty. Your health fully restores between waves.
-- **Endless Mode**: Survive as long as you can! Procedurally generated enemy waves and partial healing during cooldowns add to the challenge.
+
+**Campaign Mode**  
+Fight through carefully designed enemy waves. Each wave gets progressively harder, but you get full health back between rounds. Beat all waves to win!
+
+**Endless Mode**  
+See how long you can survive against infinite procedurally generated waves. You'll get small healing during cooldowns between waves, but enemies just keep coming. How far can you go?
 
 ## Features
 
-- Clean architecture with service locator pattern
-- Object pooling for performance (using Lean Pool)
-- Enemy HUD system with health bars and off-screen indicators
-- Upgrade system for player progression
-- Audio system with wave-type specific sounds
-- Parallax backgrounds
-- Input system supporting multiple control schemes
+- Multiple enemy types with different behaviors
+- Health bars and off-screen enemy indicators
+- Player upgrade system
+- Dynamic audio that changes with your attack type
+- Parallax scrolling backgrounds
+- Support for different control schemes (keyboard, gamepad, touch)
 
-## Tech Stack
+## Built With
 
-- **Engine**: Unity 2022+
-- **Architecture**: Service-based with dependency injection
-- **Pooling**: Lean Pool for optimization
-- **Input**: New Unity Input System
-- **UI**: Unity UI with custom components
-
-## Code Highlights
-
-- Service-based architecture (`ServiceLocator`, `IGameService`)
-- Event-driven combat system
-- Clean separation between game logic and presentation
-- Proper cleanup and memory management (no memory leaks!)
-- Robust null-checking throughout
-
-## Project Structure
-
-```
-Assets/
-├── Scripts/
-│   ├── Audio/          # Audio management
-│   ├── Combat/         # Attack system, damage, voice waves
-│   ├── Enemies/        # Enemy behaviors and AI
-│   ├── Player/         # Player controller, health, attack
-│   ├── World/          # Wave manager, spawn points
-│   ├── UI/             # All UI components
-│   ├── Infrastructure/ # Core systems, services
-│   └── Services/       # Game services
-```
-
-## State
-
-This project is portfolio-ready. The codebase has been reviewed and critical issues have been addressed:
-- All null reference checks in place
-- Memory leaks fixed
-- Event subscriptions properly cleaned up
-- Singleton patterns implemented correctly
-
-## Notes
-
-Built as a portfolio piece showcasing:
-- Clean code practices
-- Unity development skills
-- Game architecture design
-- Performance optimization
-- UI/UX implementation
+- Unity 2022+
+- Unity Input System for controls
+- Lean Pool for performance optimization
+- Service-based architecture
+- Custom UI components
 
 ---
 
