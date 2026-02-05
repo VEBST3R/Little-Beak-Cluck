@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59cf6e6c119583149876e0589182427c, type: 3}
+  m_Name: Bear
+  m_EditorClassIdentifier: 
+  maxHealth: 120
+  maxMoveSpeed: 1.4
+  moveAcceleration: 20
+  moveDeceleration: 30
+  attackCooldown: 2
+  attackDamage: 40
+  attackLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  attackBoxSize: {x: 1, y: 3}
+  attackBoxOffset: {x: 0.8, y: 0}
+  knockbackRecoverTime: 0.25
+  knockbackHorizontalDampen: 0.85
+  deathDespawnDelay: 2
+  deathPushForce: 3
+  deathTorque: 2
+  deathGravityScale: 2
+  hudWorldOffset: {x: 0, y: 2.2, z: 0}
+  waveTypeIcon: {fileID: 7890246350005439881, guid: b57c89e36f161a044a2cad798957f988, type: 3}
+  hudBarColor: {r: 1, g: 0, b: 0, a: 1}
+  hudArrowColor: {r: 1, g: 0, b: 0, a: 0.9}
+  revealSfx: {fileID: 8300000, guid: 9f2fa7fc380634349a30e09c14d2ff53, type: 3}
+  attackHitSfx: {fileID: 8300000, guid: a5bd00f07a28ad540875a7023b08c9c4, type: 3}

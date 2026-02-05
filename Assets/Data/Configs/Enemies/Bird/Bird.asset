@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61fc4253e1c87b747b8a4f24d02a832d, type: 3}
+  m_Name: Bird
+  m_EditorClassIdentifier: 
+  maxHealth: 50
+  maxMoveSpeed: 5
+  moveAcceleration: 20
+  moveDeceleration: 30
+  attackCooldown: 5
+  attackDamage: 10
+  attackLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  attackBoxSize: {x: 0.83, y: 0.65}
+  attackBoxOffset: {x: 0.37, y: -0.14}
+  knockbackRecoverTime: 0.25
+  knockbackHorizontalDampen: 0.85
+  deathDespawnDelay: 2
+  deathPushForce: 6
+  deathTorque: 5
+  deathGravityScale: 2
+  hudWorldOffset: {x: 0, y: 1.1, z: 0}
+  waveTypeIcon: {fileID: 1409638819542524206, guid: 44dab0307c63cbb4ea11e2e05dec8fa5, type: 3}
+  hudBarColor: {r: 1, g: 0, b: 0, a: 1}
+  hudArrowColor: {r: 1, g: 0, b: 0, a: 0.9}
+  revealSfx: {fileID: 8300000, guid: dd6ef9eeb14a5804ca7d4aace8a36b33, type: 3}
+  attackHitSfx: {fileID: 8300000, guid: a5bd00f07a28ad540875a7023b08c9c4, type: 3}
+  patrolZoneSize: {x: 68.5, y: 3.68}
+  patrolZoneOffset: {x: 2.15, y: -1.26}
+  patrolMoveSpeed: 5
+  patrolSmoothingTime: 0.25
+  patrolWaitTime: 0
+  diveDuration: 0.9
+  diveArcDepth: 2.5
+  attackImpactDelay: 0.1
+  attackHorizontalDistance: -3.94
+  attackEntryHeight: 3.15
+  attackExitHeight: 2.52
+  attackTargetHeightOffset: 0.93
+  enablePredictiveTargeting: 1
+  predictionDefaultLeadTime: 0.35
+  predictionMaxLeadTime: 0.9
+  predictionVelocityResponsiveness: 10
+  predictionSmoothingTime: 0.18
+  predictionMagnetRange: 1.6
+  predictionMaxOffset: 4
+  returnSpeed: 4
+  postAttackDelay: 2
+  climbHeight: 3
+  climbDuration: 1.1
+  climbArcHeight: 2

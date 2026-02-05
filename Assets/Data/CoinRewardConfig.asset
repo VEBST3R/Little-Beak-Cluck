@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21be08ef9e0435644b508980ec27b9d8, type: 3}
+  m_Name: CoinRewardConfig
+  m_EditorClassIdentifier: Assembly-CSharp::LittleBeakCluck.World.CoinRewardAsset
+  defaultCampaignWaveCoins: 25
+  proceduralRewardRange: {x: 25, y: 50}
+  defaultEndlessCoinsPerKill: 0
+  enemyRewards:
+  - enemy: {fileID: 11400000, guid: 4e324ff7905f27c43b6a4ce784977fe4, type: 2}
+    coinsPerKill: 30
+  - enemy: {fileID: 11400000, guid: 673a0b3c0e123b54c844d2a5b0c4a8f0, type: 2}
+    coinsPerKill: 5
+  - enemy: {fileID: 11400000, guid: 5cfc2f0bcfce4c547a83f00ecc4c5cb8, type: 2}
+    coinsPerKill: 50
+  - enemy: {fileID: 11400000, guid: ee81fa227f3257b428e06ddf19810200, type: 2}
+    coinsPerKill: 15
+  - enemy: {fileID: 11400000, guid: 8eb3d5aa79eac81409a755b7ce475fe8, type: 2}
+    coinsPerKill: 3
+  - enemy: {fileID: 11400000, guid: 3e39a90a227d0f046a3e2be70d374a5d, type: 2}
+    coinsPerKill: 25
+  - enemy: {fileID: 11400000, guid: 7d2274a5a246ecd4c82aa96e58bc142d, type: 2}
+    coinsPerKill: 20
+  campaignRewards: []
