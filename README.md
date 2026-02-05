@@ -35,12 +35,10 @@ See how long you can survive against infinite procedurally generated waves. You'
 
 ## Built With
 
-- Unity 2022+
+- Unity 6
 - Unity Input System for controls
 - Lean Pool for performance optimization
 - Service-based architecture
 - Custom UI components
 
 ---
-
-*Made with Unity 🎮*
