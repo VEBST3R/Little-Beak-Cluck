@@ -333,6 +333,16 @@ namespace LittleBeakCluck.Enemies
             _isKnockedBack = false;
             _animator.enabled = false;
 
+            // FIX: Safely remove from Deformation System to prevent WebGL batch corruption
+            var skins = GetComponentsInChildren<UnityEngine.U2D.Animation.SpriteSkin>();
+            foreach (var skin in skins)
+            {
+                if (skin != null)
+                {
+                    skin.enabled = false;
+                }
+            }
+
             IgnoreCollisionsWithPlayer(true);
 
             _rigidbody.bodyType = RigidbodyType2D.Dynamic;

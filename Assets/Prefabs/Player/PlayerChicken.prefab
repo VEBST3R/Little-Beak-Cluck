@@ -1126,6 +1126,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 6106efc59d38167468e9dec4bac5bb19, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4312941787902491770}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 6106efc59d38167468e9dec4bac5bb19, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6176649713981814441}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 6106efc59d38167468e9dec4bac5bb19, type: 3}
 --- !u!1 &241466184330341498 stripped
 GameObject:
@@ -1207,11 +1210,13 @@ MonoBehaviour:
   _attackCooldown: 1
   _multiWaveSpacing: 0.75
   _chargeBar: {fileID: 2375520153756686150}
+  _logDebug: 0
   _normalHead: {fileID: 3952228904345336029}
   _screamHead: {fileID: 3565243858082676076}
   _extraScreamHold: 0.5
   _attackButtonAnimator: {fileID: 0}
   _reloadBoolName: reload
+  _ensureAliveOnStart: 1
 --- !u!95 &1462507533751683309
 Animator:
   serializedVersion: 7
@@ -1295,6 +1300,19 @@ MonoBehaviour:
   preventImmediateRepeat: 1
   useLocalSource: 0
   audioSource: {fileID: 0}
+--- !u!210 &6176649713981814441
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241466184330341498}
+  m_Enabled: 1
+  m_SortingLayerID: 1486618501
+  m_SortingLayer: 1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
+  m_Sort3DAs2D: 0
 --- !u!4 &1410125740494304281 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: 6106efc59d38167468e9dec4bac5bb19, type: 3}

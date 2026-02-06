@@ -200,6 +200,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 12aed6d99d5e3374d85c7938105e6a88, type: 3}
       insertIndex: -1
       addedObject: {fileID: -3514624263473775717}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 12aed6d99d5e3374d85c7938105e6a88, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -174160207669150708}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 12aed6d99d5e3374d85c7938105e6a88, type: 3}
 --- !u!4 &1361022225573777499 stripped
 Transform:
@@ -291,6 +294,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LittleBeakCluck.Combat.EnemyWaveAffinity
   _effectiveType: 2
+--- !u!210 &-174160207669150708
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3319478593767987187}
+  m_Enabled: 1
+  m_SortingLayerID: 1486618501
+  m_SortingLayer: 1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
+  m_Sort3DAs2D: 0
 --- !u!212 &7198258127859529662 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 5337819231070306800, guid: 12aed6d99d5e3374d85c7938105e6a88, type: 3}

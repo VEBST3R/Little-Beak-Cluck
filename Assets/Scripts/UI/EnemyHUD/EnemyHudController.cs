@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using Lean.Pool;
 using LittleBeakCluck.Enemies;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace LittleBeakCluck.UI
 {
@@ -29,6 +32,13 @@ namespace LittleBeakCluck.UI
         [SerializeField] private float _arrowVerticalOffset = 0f;
         [SerializeField] private Color _defaultBarColor = Color.red;
         [SerializeField] private Color _defaultArrowColor = Color.white;
+        [Header("Platform Scaling")]
+        [Tooltip("Автоматично масштабувати Canvas для різних платформ")]
+        [SerializeField] private bool autoPlatformScale = true;
+        [Tooltip("Масштаб Canvas на Desktop/WebGL (менше = дрібніший UI)")]
+        [SerializeField] private float desktopCanvasScale = 0.6f;
+        [Tooltip("Масштаб Canvas на Mobile")]
+        [SerializeField] private float mobileCanvasScale = 1.0f;
 
         private readonly List<Entry> _entries = new();
         private readonly Queue<Entry> _entriesToRemove = new();
@@ -95,6 +105,12 @@ namespace LittleBeakCluck.UI
                 _barContainer = _canvasRect;
             if (_arrowContainer == null)
                 _arrowContainer = _canvasRect;
+
+            // Застосовуємо platform-specific масштаб
+            if (autoPlatformScale && _canvas != null)
+            {
+                ApplyPlatformCanvasScale();
+            }
 
             if (_canvasRect == null)
             {
@@ -333,6 +349,28 @@ namespace LittleBeakCluck.UI
                     break;
                 }
             }
+        }
+
+        private void ApplyPlatformCanvasScale()
+        {
+            bool isMobile = IsMobilePlatform();
+            float scale = isMobile ? mobileCanvasScale : desktopCanvasScale;
+            
+            // Застосовуємо масштаб до Canvas
+            _canvas.transform.localScale = Vector3.one * scale;
+            
+            Debug.Log($"[EnemyHudController] Canvas масштаб встановлено: {scale} (Platform: {(isMobile ? "Mobile" : "Desktop/WebGL")}");
+        }
+
+        private bool IsMobilePlatform()
+        {
+#if UNITY_EDITOR
+            // В Editor перевіряємо Build Target
+            var buildTarget = EditorUserBuildSettings.activeBuildTarget;
+            return buildTarget == BuildTarget.Android || buildTarget == BuildTarget.iOS;
+#else
+            return Application.isMobilePlatform;
+#endif
         }
     }
 }

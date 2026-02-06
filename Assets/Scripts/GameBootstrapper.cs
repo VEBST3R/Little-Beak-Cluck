@@ -4,6 +4,9 @@ using LittleBeakCluck.Player;
 using LittleBeakCluck.Services;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace LittleBeakCluck
 {
@@ -21,6 +24,9 @@ namespace LittleBeakCluck
         [SerializeField] private int targetFrameRate = 200;
         [Tooltip("Force vSync off so targetFrameRate is respected.")]
         [SerializeField] private bool disableVSync = true;
+        [Header("Platform Fixes")]
+        [Tooltip("Автоматично застосовувати фікси для ПК/WebGL (UI масштаб та рендеринг спрайтів)")]
+        [SerializeField] private bool enablePlatformFixes = true;
 
         private void Awake()
         {
@@ -32,6 +38,12 @@ namespace LittleBeakCluck
             if (targetFrameRate != 0)
             {
                 Application.targetFrameRate = targetFrameRate;
+            }
+
+            // Apply platform-specific fixes
+            if (enablePlatformFixes)
+            {
+                ApplyPlatformFixes();
             }
 
             var serviceLocator = ServiceLocator.Instance;
@@ -113,6 +125,34 @@ namespace LittleBeakCluck
             {
                 audioService.Configure(gameAudioConfig);
             }
+        }
+
+        private void ApplyPlatformFixes()
+        {
+            // Додаємо PlatformRenderingFix якщо його ще немає
+            if (FindFirstObjectByType<PlatformRenderingFix>() == null)
+            {
+                var fixGo = new GameObject("PlatformRenderingFix");
+                fixGo.AddComponent<PlatformRenderingFix>();
+                DontDestroyOnLoad(fixGo);
+                Debug.Log("[GameBootstrapper] Додано PlatformRenderingFix");
+            }
+
+            // Canvas фікси додаються автоматично через компонент PlatformCanvasFix на кожному Canvas
+            // Якщо потрібно, можна автоматично додавати його до всіх Canvas
+            bool isMobile = IsMobilePlatform();
+            Debug.Log($"[GameBootstrapper] Platform: {(isMobile ? "Mobile" : "Desktop/WebGL")} - фікси активовані");
+        }
+
+        private bool IsMobilePlatform()
+        {
+#if UNITY_EDITOR
+            // В Editor перевіряємо Build Target
+            var buildTarget = EditorUserBuildSettings.activeBuildTarget;
+            return buildTarget == BuildTarget.Android || buildTarget == BuildTarget.iOS;
+#else
+            return Application.isMobilePlatform;
+#endif
         }
     }
 }
